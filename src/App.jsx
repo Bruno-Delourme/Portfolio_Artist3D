@@ -2,11 +2,13 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
+import MagnifyingGlass from './components/MagnifyingGlass/MagnifyingGlass';
 import './styles.css';
 
 function App() {
   return (
     <div className="App">
+      <MagnifyingGlass/>
       <Header />
       <Home />
     </div>
