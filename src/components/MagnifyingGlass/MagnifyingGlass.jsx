@@ -1,42 +1,36 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
-import './styles.css';
+import React, { useState, useRef } from "react";
+import PropTypes from "prop-types";
 
 const MagnifyingGlass = ({ text }) => {
-  const [hover, setHover] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef(null);
 
-  const handleMouseEnter = () => setHover(true);
-  const handleMouseLeave = () => setHover(false);
   const handleMouseMove = (e) => {
-    const { left, top } = e.target.getBoundingClientRect();
-    setPosition({
-      x: e.clientX - left,
-      y: e.clientY - top,
-    });
+    const rect = containerRef.current.getBoundingClientRect();
+    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
   return (
-    <div className="container">
+    <div
+      className="magnifying-container"
+      onMouseMove={handleMouseMove}
+      ref={containerRef}
+    >
+      <p className="magnified-text">{text}</p>
       <div
-        className="MagnifyingGlass"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onMouseMove={handleMouseMove}
+        className="magnifying-glass"
+        style={{
+          top: position.y - 50,
+          left: position.x - 50,
+        }}
       />
-      {hover && (
-        <div
-          className="zoom"
-          style={{ left: position.x, top: position.y }}
-        >
-          {text}
-        </div>
-      )}
-      <div className="text">
-        {text}
-      </div>
     </div>
   );
+};
+
+MagnifyingGlass.propTypes = {
+  text: PropTypes.string.isRequired,
 };
 
 export default MagnifyingGlass;

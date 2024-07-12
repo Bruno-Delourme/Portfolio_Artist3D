@@ -8,9 +8,9 @@ import './styles.css';
 function App() {
   return (
     <div className="App">
-      <MagnifyingGlass/>
       <Header />
       <Home />
+      <MagnifyingGlass text="Ceci est la phrase à agrandir sous la loupe." />
     </div>
   );
 }
