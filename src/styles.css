@@ -11,12 +11,26 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.258);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.header.hide {
+  transform: translateY(-100%);
+}
+
+.header.show {
+  transform: translateY(0);
 }
 
 /****************** V   EFFET LOGO NEON     V ********************/
 .logo {
   margin-left: 10%;
-  margin-top: 3%;
+  margin-top: 1%;
   font-size: 28px;
   font-weight: bolder;
   --glow-color: rgb(217, 176, 255);
@@ -101,6 +115,8 @@ body {
   right: 0;
   left: 0;
 }
+
+/******************** V  HOME  V *********************************/
 
 .home {
   display: flex;
