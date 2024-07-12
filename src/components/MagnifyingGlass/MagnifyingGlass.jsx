@@ -21,15 +21,16 @@ const MagnifyingGlass = ({ text }) => {
       <div
         className="magnifying-glass"
         style={{
-          top: position.y - 75,
-          left: position.x - 75,
-          clipPath: 'circle(75px at 75px 75px)',
+          top: position.y - 100,
+          left: position.x - 100,
+          clipPath: 'circle(100px at 100px 100px)',
         }}
       >
         <p
           className="magnified-text zoomed"
           style={{
-            transform: `translate(${-position.x * 2 + 85}px, ${-position.y * 2 + 85}px) scale(2)`,
+            transform: `translate(${-position.x * 2.5 + 100}px, ${-position.y * 2.5 + 100}px) scale(4)`,
+            
           }}
         >
           {text}
