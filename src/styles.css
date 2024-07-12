@@ -6,6 +6,7 @@ body {
   height: 300vh;
 }
 
+/*******************   HEADER  ************************************/
 .header {
   display: flex;
   justify-content: space-between;
@@ -14,7 +15,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.258);
+  background-color: rgba(0, 0, 0, 0);
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
 }
@@ -27,16 +28,16 @@ body {
   transform: translateY(0);
 }
 
-/****************** V   EFFET LOGO NEON     V ********************/
+/**************    EFFET LOGO NEON      *****************/
 .logo {
   margin-left: 10%;
   margin-top: 1%;
   font-size: 28px;
   font-weight: bolder;
-  --glow-color: rgb(217, 176, 255);
-  --glow-spread-color: rgba(191, 123, 255, 0.781);
-  --enhanced-glow-color: rgb(231, 206, 255);
-  --btn-color: rgb(100, 61, 136);
+  --glow-color: rgb(176, 234, 255);
+  --glow-spread-color: rgba(130, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(208, 206, 255);
+  --btn-color: rgb(61, 61, 136);
   border: 0.25em solid var(--glow-color);
   padding: 1em 3em;
   color: var(--glow-color);
@@ -81,7 +82,7 @@ body {
     inset 0 0 0.5em 0.25em var(--glow-color);
 }
 
-/********************** NAVLING LINKS ******************************/
+/**************  NAVLING LINKS ************************/
 .nav-links {
   list-style: none;
   display: flex;
@@ -116,7 +117,7 @@ body {
   left: 0;
 }
 
-/******************** V  HOME  V *********************************/
+/************************   HOME  *********************************/
 
 .home {
   display: flex;
@@ -139,7 +140,7 @@ body {
   margin: 20px 0;
 }
 
-/******************  V  PARTIE BOUTTON A PROPOS  V ***************/
+/******************   PARTIE BOUTTON A PROPOS   ***************/
 .about-button {
   margin-top: 2rem;
   position: relative;
@@ -214,3 +215,5 @@ body {
   white-space: nowrap;
   transform-origin: top left;
 }
+
+/********************** CONTACT ***********************************/
