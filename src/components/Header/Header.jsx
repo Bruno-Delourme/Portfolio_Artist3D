@@ -35,7 +35,10 @@ const Header = () => {
 
   return (
     <header className={`header ${showHeader ? 'show' : 'hide'}`}>
-      <div className="logo" onClick={scrollToTop}>STUDIO</div>
+       <div className="logoTop" onClick={scrollToTop}>
+       <div className="logoTop2"><span className="span2">STUDIO</span></div>
+        
+        </div>
       <nav>
         <ul className="nav-links">
           <li><a href="#">PROJETS</a></li>
