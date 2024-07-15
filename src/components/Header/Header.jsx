@@ -32,13 +32,11 @@ const Header = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-
   return (
     <header className={`header ${showHeader ? 'show' : 'hide'}`}>
-       <div className="logoTop" onClick={scrollToTop}>
-       <div className="logoTop2"><span className="span2">STUDIO</span></div>
-        
-        </div>
+      <div className="logoTop" onClick={scrollToTop}>
+        <div className="logoTop2"><span className="span2">STUDIO</span></div>
+      </div>
       <nav>
         <ul className="nav-links">
           <li><a href="#">PROJETS</a></li>

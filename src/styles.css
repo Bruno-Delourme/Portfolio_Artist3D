@@ -3,7 +3,10 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(1deg, #1a222c 0%, #06090e 100%);
   color: #fff;
-  height: 300vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 300vh;
 }
 
 /*******************   HEADER  ************************************/
@@ -11,7 +14,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  box-sizing: border-box;
+  padding-left: 5rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -28,42 +32,58 @@ body {
   transform: translateY(0);
 }
 
-.nav-links li{
+.nav-links {
+  display: flex; /* Align items horizontally */
   align-items: center;
+  list-style: none; /* Remove bullets */
+  margin-right: 5rem;
+  gap: 1rem;
+}
+
+.nav-links li {
+  
   background-color: transparent;
-  color: #fff;
+  color: #e1e1e1;
   cursor: pointer;
-  display: flex;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.5;
-  text-decoration: none;
-  list-style: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  position: relative;
+  border: none;
+  background: none;
   text-transform: uppercase;
-  outline: 0;
-  border: 0;
-  padding: 1rem;
-  margin-left: 2rem;
-  display: inline;
+  transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-right: 20px; /* Ajoute de l'espace entre les éléments */
 }
 
-.nav-links a:before {
-  background-color: #fff;
+.nav-links li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links li:focus,
+.nav-links li:hover {
+  color: #fff;
+}
+
+.nav-links li:focus:after,
+.nav-links li:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.nav-links li:after {
+  text-decoration: none;
   content: "";
-  display: inline-block;
-  height: 1px;
-  margin-right: 10px;
-  transition: all .42s cubic-bezier(.25,.8,.25,1);
-  width: 0;
-}
-
-.nav-links a:hover:before {
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
   background-color: #fff;
-  width: 3rem;
+  transition: width 400ms cubic-bezier(0.25, 0.8, 0.25, 1), left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
-
 /**************    BOUTON TOP      *****************/
 .logoTop2 {
   position: relative;
